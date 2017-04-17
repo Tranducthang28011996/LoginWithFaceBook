@@ -53,3 +53,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'omniauth-facebook'
 gem "twitter-bootstrap-rails"
+
+gem "font-awesome-rails"
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+gem 'lazy_high_charts'

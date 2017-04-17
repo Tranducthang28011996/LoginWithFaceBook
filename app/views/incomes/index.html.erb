@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Incomes</h1>
+       
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Amount</th>
+        <th>Categories</th>
+        <th>Created at</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <% @incomes.each do |cost| %>
+    <tbody>
+      <tr>
+        <td><%= cost.id %></td>
+        <td><%= cost.amount %></td>
+        <td>
+          <% a=cost.categories %>
+          <% a.each do |t| %>
+           <%= t.name %>,
+          <% end %>
+        </td>
+        <td><%= cost.created_at %></td>
+        <td>
+          <%= link_to "Edit", edit_income_path(cost), method: :get, 
+            class: "btn btn-info" %>
+          <%= link_to "Delete", delete_incomes_path(cost), method: :delete, data:{confirm: 'Are you sure?'}, :id => 'delete_income', class: "btn btn-warning" %>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+
+  <%= link_to "New Cost", new_income_path , class: "btn btn-info"%>
+</div>
+

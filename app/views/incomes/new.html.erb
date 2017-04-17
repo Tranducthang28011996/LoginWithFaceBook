@@ -1,0 +1,36 @@
+<%#= method_name %>
+	<body>
+		<div class="col-sm-4" style="margin-left: 427px;margin-top: 50px">
+			<div class="rcol-md-offset-3">
+				<div class="main-login main-center">
+				<h1>New Incomes</h1>
+					<%= form_for @income do |f|  %>	
+						 <div class="form-group">
+        					 <%= f.label :amount, "Amount" %> 
+        					<%= f.text_field :amount, class: 'form-control'%>
+      					</div>
+						<label>Categories</label>
+
+						<!-- <div class="checkbox">
+  							<label><input type="checkbox" value="">Option 1</label>
+						</div> -->
+
+						<br><%= f.collection_check_boxes :category_ids, @categories, :id, :name %></br>
+
+						
+						<div class="form-group ">
+
+						<%= f.submit "Save", class: "btn btn-primary btn-lg btn-block login-button" %>
+
+						</div>
+						
+			
+					<% end %>
+				</div>
+			</div>
+		</div>
+
+		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	</body>
