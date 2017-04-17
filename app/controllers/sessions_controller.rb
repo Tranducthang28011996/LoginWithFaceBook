@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     @users=User.find_by(email: params[:session][:email].downcase)
     if @users && @users.authenticate(params[:session][:password]) 
     session[:user_id]=@users.id
-    redirect_to '/'
+    redirect_to charts_index_path
     else
       render :new
     end 
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       session[:omniauth] = auth.except 'extra'
       user = User.sign_in_from_omniauth auth
       session[:user_id] = user.id
-      redirect_to root_url, notice: "SIGNED IN"
+      redirect_to charts_index_path, notice: "SIGNED IN"
     end
 
     def destroy

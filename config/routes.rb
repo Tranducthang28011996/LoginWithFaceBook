@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'sessions#new'
   get 'charts/index'
 
  get 'categories' =>'category#index'
@@ -10,13 +11,12 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create]
     resources :incomes
     delete 'incomes/:id/' =>'incomes#destroy' ,as: :delete_incomes
-    resources :reports
+    # resources :reports
 
 
     resources :costs
     delete 'costs/:id/' =>'costs#destroy' ,as: :delete_costs
 
-	root 'home#index'
 	get 'home/profile'
 
 	get 'login' => 'sessions#new'

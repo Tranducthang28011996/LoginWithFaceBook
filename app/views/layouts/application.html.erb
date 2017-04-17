@@ -14,7 +14,7 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Lower Money</a>
     </div>
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav ">
       <li class="active"><%= link_to "Home", root_path %></li>
       <li class="dropdown ">
         <% if current_user %>
@@ -30,7 +30,7 @@
           <li><%= link_to "Incomes", incomes_path %></li>
           <li><%= link_to "Costs", costs_path %></li>
           <li><%= link_to "Setting", '#' %></li>
-          <li><%= link_to "Statistical", '#' %></li>
+          <li><%= link_to "Statistical", charts_index_path %></li>
           <li><%= link_to "Logout", signout_path , method: :delete %></li>
 
          <% else %>

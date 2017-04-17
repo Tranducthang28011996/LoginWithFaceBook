@@ -16,6 +16,10 @@ module CostsHelper
 	 arr.push(cost_chart.where("?<= created_at AND created_at<=?",first_day_of_month,last_day_of_month).sum(:amount))
 	 return arr
 	end
+
+	def each_category_costs
+		
+	end
 end
 
 
