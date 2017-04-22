@@ -8,7 +8,7 @@ class ChartsController < ApplicationController
     arr= []
     cost_chart.each{|k| arr.push(k.created_at)}
     @chart = LazyHighCharts::HighChart.new('graph') do |f|
-      f.title(:text => "LazyHighCharts")
+      f.title(:text => "Total costs And Incomes Col")
       f.xAxis(:categories => arr )
       f.series(:name => "Costs", :yAxis => 0, :data => total_costs)
       f.series(:name => "Incomes", :yAxis => 1, :data => total_incomes)
@@ -33,7 +33,7 @@ class ChartsController < ApplicationController
                    ]
           }
           f.series(series)
-          f.options[:title][:text] = "THA PIE"
+          f.options[:title][:text] = "Total costs And Incomes Pie"
           f.legend(:layout=> 'vertical',:style=> {:left=> 'auto', :bottom=> 'auto',:right=> '50px',:top=> '100px'}) 
           f.plot_options(:pie=>{
             :allowPointSelect=>true, 

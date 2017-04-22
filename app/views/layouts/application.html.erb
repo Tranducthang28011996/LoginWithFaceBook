@@ -6,16 +6,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   </head>
 
   <body>
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Lower Money</a>
+      <span class="navbar-brand"> Money Lover</span>
     </div>
     <ul class="nav navbar-nav ">
-      <li class="active"><%= link_to "Home", root_path %></li>
+      <li class="active"><%= link_to "Home", charts_index_path %></li>
       <li class="dropdown ">
         <% if current_user %>
         <a class="dropdown-toggle-right" data-toggle="dropdown" href="#"><%= current_user.name %>
@@ -47,8 +49,19 @@
   </div>
 </nav>
     <%= yield %>
-    <div class="footer navbar-bottom text-center">
-        <p>Copyright © Your Website 2014</p>
-    </div>
+<!-- // -->
+<div class="container" style="margin-top: 350px">
+
+    <hr>
+        <div class="text-center center-block">
+            <p class="txt-railway">- TDT -</p>
+            <br />
+                <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+              <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+              <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+              <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+</div>
+    <hr>
+</div>
   </body>
 </html>
