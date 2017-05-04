@@ -1,21 +1,27 @@
 require 'date'
 module IncomesHelper
-	def first_day_of_month
+	def income_first_day_of_month
 	 income_chart = current_user.incomes
-	 start_month = income_chart.minimum(:created_at)
+	 income_chart.minimum(:created_at)
 	 
 	end
 
-	def last_day_of_month
+	def income_last_day_of_month
 		income_chart = current_user.incomes
-		end_month = income_chart.maximum(:created_at)
+		income_chart.maximum(:created_at)
+
 	end
 
-	def total_incomes 
-	arr= []
-     income_chart=current_user.incomes
-	 arr.push(income_chart.where("?<= created_at AND created_at<=?",first_day_of_month,last_day_of_month).sum(:amount))
-	 return arr
+	def total_incomes
+		arr= []
+     	income_chart=current_user.incomes
+		
+		first_day_of_month= income_chart.minimum(:created_at)
+		last_day_of_month= income_chart.maximum(:created_at)
+	 	
+	 	arr.push(income_chart.where("?<= created_at AND created_at<=?",income_first_day_of_month, income_last_day_of_month).sum(:amount))
+	 	
+	 	return arr
 
 		# return []
 	end

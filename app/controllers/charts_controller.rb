@@ -30,8 +30,9 @@ class ChartsController < ApplicationController
                    :type=> 'pie',
                    :name=> 'Total',
                    :data=> [
-                      ['Costs',   total_costs[0]],
-                      ['Incomes',       total_incomes[0]],
+                      ['Costs',   20],
+                      ['Incomes1',       20],
+                      ['Incomes2',       20],
                    ]
           }
           f.series(series)
