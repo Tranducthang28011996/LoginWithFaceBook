@@ -16,6 +16,8 @@ module IncomesHelper
      income_chart=current_user.incomes
 	 arr.push(income_chart.where("?<= created_at AND created_at<=?",first_day_of_month,last_day_of_month).sum(:amount))
 	 return arr
+
+		# return []
 	end
 end
  # Income.where("? < created_at AND created_at < ?", 1, 30).sum(:amount)

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'sessions#new'
-  get 'charts/index'
+  get 'charts/index' => 'charts#index'
 
  get 'categories' =>'category#index'
     get 'categories' =>'category#index'

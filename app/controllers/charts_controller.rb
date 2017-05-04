@@ -7,9 +7,11 @@ class ChartsController < ApplicationController
     # end_month = cost_chart.maximum(:created_at).month
     arr= []
     cost_chart.each{|k| arr.push(k.created_at)}
+    
     @chart = LazyHighCharts::HighChart.new('graph') do |f|
       f.title(:text => "Total costs And Incomes Col")
       f.xAxis(:categories => arr )
+      
       f.series(:name => "Costs", :yAxis => 0, :data => total_costs)
       f.series(:name => "Incomes", :yAxis => 1, :data => total_incomes)
 
