@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
+ 
   def new
+     @kt = false
   end
   def login_user
     @users=User.find_by(email: params[:session][:email].downcase)
@@ -24,4 +26,5 @@ class SessionsController < ApplicationController
      session[:omniauth] = nil
      redirect_to root_url, notice: "SIGNED OUT"
   end
+
 end

@@ -1,4 +1,5 @@
 class CostsController < ApplicationController
+  before_action :authenticate_user!
   def index
   	@costs=current_user.costs
   end

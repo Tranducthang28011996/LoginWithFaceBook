@@ -1,6 +1,7 @@
 class ChartsController < ApplicationController
   include IncomesHelper
   include CostsHelper
+  before_action :authenticate_user!
   def index
     cost_chart = current_user.costs
     # start_month = cost_chart.minimum(:created_at).month

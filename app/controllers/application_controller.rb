@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
     def authenticate_user!
 		if session[:user_id]
-			redirect_to '/'
+			
+    else
+      redirect_to new_user_path
 		end
 	end
 
