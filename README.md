@@ -1,26 +1,14 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# LoginWithFaceBook
-# LoginWithFaceBook
+---------------------------------Web wallet------------------------------
+https://vionline.herokuapp.com/
+https://github.com/Tranducthang28011996/LoginWithFaceBook
+--------------------------------------------------------------------------
+Ung dung giup quan ly thu nhap va quan ly chi phi the cac thang.		    		|
+--------------------------------------------------------------------------
+Test:
+Tài khoản:  thang@gmail.com --- Mật khẩu :1
+----------------------------------------------------------------------------
+--Viết trên nền tảng Rails 
+	Tinh nang: 
+		-Them sua xoa cap nhat cac khoan thu cung nhu chi.
+		-Co the dang nhap voi facebook.
+		-Ket hop voi bieu do de de dang theo doi tong thu chi.
