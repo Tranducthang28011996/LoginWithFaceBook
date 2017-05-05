@@ -2,19 +2,18 @@ class ChartsController < ApplicationController
   include IncomesHelper
   include CostsHelper
   def index
-    # cost_chart = current_user.costs
+    cost_chart = current_user.costs
     # start_month = cost_chart.minimum(:created_at).month
     # end_month = cost_chart.maximum(:created_at).month
     arr= []
-    # cost_chart.each{|k| arr.push(k.created_at)}
-    
+    cost_chart.each{|k| arr.push(k.created_at)}
     @chart = LazyHighCharts::HighChart.new('graph') do |f|
       f.title(:text => "Total costs And Incomes Col")
       f.xAxis(:categories => arr )
       
       f.series(:name => "Costs", :yAxis => 0, :data => total_costs)
       f.series(:name => "Incomes", :yAxis => 1, :data => total_incomes)
-
+      # byebug
       f.yAxis [
         {:title => {:text => "Costs", :margin => 70} },
         {:title => {:text => "Incomes"}, :opposite => true},
@@ -30,9 +29,8 @@ class ChartsController < ApplicationController
                    :type=> 'pie',
                    :name=> 'Total',
                    :data=> [
-                      ['Costs',   20],
-                      ['Incomes1',       20],
-                      ['Incomes2',       20],
+                      ['Costs',   total_costs[0]],
+                      ['Incomes', total_incomes[0]],
                    ]
           }
           f.series(series)
